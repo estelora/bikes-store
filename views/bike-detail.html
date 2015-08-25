@@ -1,0 +1,32 @@
+<!--
+submit form button
+ng repeat each line
+ng model
+delete item button
+add accessory button
+delete accessory button
+submit / cancel / back to home buttons
+-->
+<div>
+  <h1>Bike Details</h1>
+    <ul>
+      <li>Brand: <input ng-model="ctrl.bike.name"></li>
+      <li>Price: <input type="number" ng-model="ctrl.bike.price"></li>
+      <li>Year: <input type="number" ng-model="ctrl.bike.year"></li>
+      <li>Previous Owner:<input ng-model="ctrl.bike.previousOwners"></li>
+    </ul>
+    <button ng-click="ctrl.bike.addAccessory('', '')">Add Accessory</button>
+
+    <ul ng-repeat="accessory in ctrl.bike.accessories">
+        <!-- have access to the whole accessories array bc of ng-rpt -->
+        <li>Item: <input ng-model="accessory.description"></li>
+        <li>Price: <input type="number" ng-model="accessory.cost"></li>
+        <button  style="padding:0px; margin-top: 6px;" ng-click="ctrl.bike.deleteAccessory(accessory)">Remove Accessory</button>
+
+    </ul>
+    <button ng-click="ctrl.submitBike();" type="submit">Submit Bike</button>
+
+    <button ng-click="ctrl.cancel();" type="submit">Cancel</button>
+
+
+</div>

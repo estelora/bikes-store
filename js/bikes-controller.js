@@ -27,14 +27,24 @@ function(allBikes, weatherLab) {
   .then(function(result) {
     //the weather is result.data
     console.log(result.data);
-    var weather = result.data.weather;
+    var location = result.data.name;
+    var currentTemp = Math.round((result.data.main.temp - 273.15) * 1.8000 + 32.00);
+    var tempHigh = Math.round((result.data.main.temp_max - 273.15) * 1.8000 + 32.00);
+    console.log(tempHigh);
+    var tempLow = Math.round((result.data.main.temp_min - 273.15) * 1.8000 + 32.00);
+    console.log(tempLow);
+    var weather = result.data.weather[0].description.charAt(0).toUpperCase() + result.data.weather[0].description.slice(1).toLowerCase();
     console.log(weather);
-    self.currentWeather= result.data;
+    self.location = location;
+    self.currentWeather = weather;
+    self.currentTemp = currentTemp;
+    self.tempLow = tempLow;
+    self.tempHigh = tempHigh;
+
   })
   .catch(function(error){
     self.currentWeather="Weather not available."
     // parse info later!
   });
-
 
 }]);

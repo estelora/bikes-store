@@ -63,6 +63,9 @@ Display weather API info here, on promo page
 
   <div>
     <!-- controller for everything one this pg is 'bikes' -->
-    Current Weather: {{bikes.currentWeather}}
+    <ul class="weather-locale">City: {{bikes.location}}
+      <li class="weather-content"> {{bikes.currentWeather}}, {{bikes.currentTemp}}&#8457;</li>
+      <li class="weather-content">High: {{bikes.tempHigh}}&#8457; Low: {{bikes.tempLow}}&#8457;</li>
+    </ul>
   </div>
 </div>

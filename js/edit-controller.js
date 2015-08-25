@@ -1,6 +1,6 @@
 // take the index of bike
 // let you edit the inputs
-// sumit changes
+// submit changes
 // return home
 
 
@@ -34,12 +34,12 @@ function(allBikes, bikeFactory, $routeParams) {
   self.bike = bike;
 
 //just go back home ~ angular updated for us!
-self.submitBike=function() {
+self.submitBike = function() {
   window.history.back();
 
 }
 
-self.cancel=function() {
+self.cancel = function() {
   window.history.back();
 }
 }]);

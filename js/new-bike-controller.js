@@ -29,13 +29,13 @@ function(allBikes, bikeFactory) {
   var self = this;
 
 //stick the bike in allbikes and go back home~!
-self.submitBike=function() {
+self.submitBike = function() {
   allBikes.add(self.bike);
   window.history.back();
 
 }
 
-self.cancel=function() {
+self.cancel = function() {
   window.history.back();
 }
   // call bikeFactory function, which gives us an empty bike object
