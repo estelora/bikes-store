@@ -1,10 +1,10 @@
 <!--
 submit form button
-ng repeat each line
-ng model
-delete item button
-add accessory button
-delete accessory button
+ng-repeat each line
+ng-model for nike data
+delete item button,
+add accessory button,
+delete accessory button,
 submit / cancel / back to home buttons
 -->
 <div>
@@ -18,10 +18,10 @@ submit / cancel / back to home buttons
     <button ng-click="ctrl.bike.addAccessory('', '')">Add Accessory</button>
 
     <ul ng-repeat="accessory in ctrl.bike.accessories">
-        <!-- have access to the whole accessories array bc of ng-rpt -->
+        <!-- have access to the whole accessories array bc of ng-repeat -->
         <li>Item: <input ng-model="accessory.description"></li>
         <li>Price: <input type="number" ng-model="accessory.cost"></li>
-        <button  style="padding:0px; margin-top: 6px;" ng-click="ctrl.bike.deleteAccessory(accessory)">Remove Accessory</button>
+        <button ng-click="ctrl.bike.deleteAccessory(accessory)">Remove Accessory</button>
 
     </ul>
     <button ng-click="ctrl.submitBike();" type="submit">Submit Bike</button>

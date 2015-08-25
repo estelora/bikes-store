@@ -5,7 +5,8 @@ done editing (submit and return home)
 cancel editing (go home)
 go home (go home)
 routing to this page from home
-call the constructor function*/
+call the constructor function
+*/
 
 app.config(['$routeProvider', function ($routeProvider) {
   //object to define the route

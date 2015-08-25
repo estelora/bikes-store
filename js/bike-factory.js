@@ -6,13 +6,13 @@ add line item (add an accessory)
 delete line item (delete accessory)
 */
 
-// This factory creates individual Bike objects
-// We need a factory that will hold an array of all the bike objectsc
+// factory creates individual Bike objects
+// factory holds an array of all the bike objectsc
 app.factory('bikeFactory', function () {
   // And we return our constructor function.
   return Bike;
 
-  // Here, we define our Invoice constructor
+  // define invoice constructor
   function Bike (spec) {
     spec = spec || {};
 
@@ -27,12 +27,13 @@ app.factory('bikeFactory', function () {
         return self.accessories.reduce(function (total, item) {
           return total + item.cost;
         }, Number(self.price));
-        // This function is equivalent to:
-        // var price = self.price;
-        // self.accessories.forEach(function(item) {
-        //  price += item.price;
-        // });
-        // return price;
+        /* This function is equivalent to:
+          var price = self.price;
+          self.accessories.forEach(function(item) {
+            price += item.price;
+          });
+          return price;
+         */
       },
 
       addAccessory: function (description, cost) {
@@ -59,7 +60,7 @@ app.factory('bikeFactory', function () {
     return self;
   }
 
-  // The Accessory class constructor!
+  // accessory class constructor
   function Accessory (spec) {
     spec = spec || {};
 

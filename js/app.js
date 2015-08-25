@@ -1,8 +1,10 @@
-// Declare our app module
-//import the ngRoute  module into it.
+/* 
+ Declare our app module
+ Import the ngRoute  module
+*/
 var app = angular.module('app', ['ngRoute']);
 
-//Create our 404 handler
+// Create 404 handler
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.otherwise({
     controller: 'Error404Ctrl',

@@ -1,15 +1,15 @@
-/*
-Create weather API factory
-get function here
-.then
-.catch (bikes-controller.js)
-we want to be able to call weatherLab.getLondon(), which will return the
-http request's promise
-filter the results from this api later, was short on time
+/* Create weather data from weather API
+  get function here
+  .then (parsed in bikes-controller.js)
+  .catch (bikes-controller.js)
+  able to call weatherLab.getLocalWeather(),
+  return http request's promise
+  filter results (bikes-controller.js)
 */
 
 app.factory('weatherLab', ['$http', function($http) {
-  //getting by city id
+  
+  //fetch by city id
   var baseUrl='http://api.openweathermap.org/data/2.5/weather?id=';
   //local city id = Raleigh, NC
   var localId ='4487042';
@@ -19,6 +19,5 @@ app.factory('weatherLab', ['$http', function($http) {
       return $http.get(baseUrl + localId);
       }
     }
-  
 }]);
 
