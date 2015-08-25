@@ -23,10 +23,13 @@ function(allBikes, weatherLab) {
   // This way, in your template you could do <li ng-repeat="bike in bikes.allBikes.list()">
   //view have access to the entire bikes factory, less trouble
   self.allBikes = allBikes;
-  weatherLab.getUKWeather()
+  weatherLab.getLocalWeather()
   .then(function(result) {
     //the weather is result.data
-    self.currentWeather=result.data;
+    console.log(result.data);
+    var weather = result.data.weather;
+    console.log(weather);
+    self.currentWeather= result.data;
   })
   .catch(function(error){
     self.currentWeather="Weather not available."

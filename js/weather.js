@@ -9,10 +9,16 @@ filter the results from this api later, was short on time
 */
 
 app.factory('weatherLab', ['$http', function($http) {
-  return {
-    getUKWeather: function() {
-      return $http.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk');
-    }
-  }
+  //getting by city id
+  var baseUrl='http://api.openweathermap.org/data/2.5/weather?id=';
+  //local city id = Raleigh, NC
+  var localId ='4487042';
 
+  return {
+      getLocalWeather: function() {
+      return $http.get(baseUrl + localId);
+      }
+    }
+  
 }]);
+
